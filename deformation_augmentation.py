@@ -8,6 +8,12 @@ def deformate_image(mat, kx_coefficient, ky_coefficient):
     M_mat = np.float32([[kx_coefficient, 0, 0], [0, ky_coefficient, 0]])
     deformated_mat = cv2.warpAffine(mat, M_mat, (width, height))
     return deformated_mat
+
+def deformate_and_crop_image(mat, kx_coefficient, ky_coefficient):
+    height, width = mat.shape[:2]
+    M_mat = np.float32([[kx_coefficient, 0, 0], [0, ky_coefficient, 0]])
+    deformated_mat = cv2.warpAffine(mat, M_mat, (int(width*kx_coefficient), int(height*ky_coefficient)))
+    return deformated_mat
     
 
 if __name__ == "__main__":
