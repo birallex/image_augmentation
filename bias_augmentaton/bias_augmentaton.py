@@ -11,7 +11,7 @@ def image_bias(matrix, x_bias, y_bias):
 
 
 if __name__ == "__main__":
-    img = image.load_img("input_image.jpg")
+    img = image.load_img("../input_image.jpg")
 
     image_matrix = image.img_to_array(img)
 
