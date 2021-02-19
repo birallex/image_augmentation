@@ -17,7 +17,7 @@ def deformate_and_crop_image(mat, kx_coefficient, ky_coefficient):
     
 
 if __name__ == "__main__":
-    img = image.load_img("input_image.jpg")
+    img = image.load_img("../input_image.jpg")
     image_matrix = image.img_to_array(img)
     output_img_matrix = deformate_image(image_matrix, 0.8, 0.35)
     output_image = image.array_to_img(output_img_matrix)
