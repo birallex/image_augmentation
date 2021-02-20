@@ -30,7 +30,7 @@ def brightness(source_matrix, brightness):
 
 
 if __name__ == "__main__":
-    img = image.load_img("input_image.jpg")
+    img = image.load_img("../input_image.jpg")
     image_matrix = image.img_to_array(img)
     output_img_matrix = brightness(image_matrix, 1.6)
     output_image = image.array_to_img(output_img_matrix)
