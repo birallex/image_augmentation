@@ -18,7 +18,7 @@ def rotate_image(mat, angle):
     return rotated_mat
 
 if __name__ == "__main__":
-    img = image.load_img("input_image.jpg")
+    img = image.load_img("../input_image.jpg")
     image_matrix = image.img_to_array(img)
 
     output_img_matrix = rotate_image(image_matrix, 30)
