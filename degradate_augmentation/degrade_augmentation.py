@@ -4,7 +4,7 @@ import pandas as pd
 import cv2
 
 
-def prepare_images(img, factor):               
+def degrade_image(img, factor):               
     h, w, _ = img.shape
     new_height = int(h / factor)
     new_width = int(w / factor)
@@ -16,6 +16,6 @@ def prepare_images(img, factor):
 if __name__ == "__main__":
     img = image.load_img("../input_image.jpg")
     image_matrix = image.img_to_array(img)
-    output_img_matrix = prepare_images(image_matrix, 4)
+    output_img_matrix = degrade_image(image_matrix, 4)
     output_image = image.array_to_img(output_img_matrix)
     output_image.save("degradate_augmentation_output.jpg")
