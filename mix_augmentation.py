@@ -7,13 +7,15 @@ from brightness_augmentation.brightness_augmentation import brightness
 from noise_augmentation.noise_augmentation import noise
 from scaling_augmentation.scaling_augmentation import scaling_image
 from rotation_augmentation.rotation_augmentation import rotate_image
+from degradate_augmentation.degrade_augmentation import degrade_image
 
 def mix_effects(image_matrix):
     image_matrix = brightness(image_matrix, random.uniform(0.4, 1.2))
     image_matrix = rotate_image(image_matrix, random.randrange(-30, 30))
     image_matrix = noise(image_matrix, random.randrange(0, 40))
     image_matrix = image_bias(image_matrix, random.randrange(-30, 30), random.randrange(-30, 30))
-    image_matrix = scaling_image(image_matrix, random.uniform(0.8, 1.2))
+    image_matrix = scaling_image(image_matrix, random.uniform(0.8, 1.2)) 
+    image_matrix = degrade_image(image_matrix, 2)
     return image_matrix
 
 
